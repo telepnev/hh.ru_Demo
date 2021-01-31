@@ -1,8 +1,10 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import config.WebdriverConfig;
 import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -20,20 +22,20 @@ public class TestBase {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-
+        WebdriverConfig config = ConfigFactory.newInstance().create(WebdriverConfig.class, System.getProperties());
         Configuration.browserCapabilities = capabilities;
-        if(System.getProperty("remote.browser.url") != null)
-            Configuration.remote = "https://user1:1234@" + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
+        if (System.getProperty("remote.browser.url") != null)
+            Configuration.remote = config.remoteBrowserUrl() + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
         Configuration.startMaximized = true;
     }
 
     @AfterEach
     @Step("Attachments")
-    public void afterEach(){
+    public void afterEach() {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
-        if(System.getProperty("remote.browser.url") != null)
+        if (System.getProperty("remote.browser.url") != null)
             attachVideo();
 
         closeWebDriver();

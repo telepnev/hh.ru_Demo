@@ -2,8 +2,6 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-import java.net.URL;
-
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
@@ -21,7 +19,7 @@ public interface WebdriverConfig extends Config {
     @Key("user.login")
     String userLogin();
 
-    @Key("remote.browser.url")
+    @Key("remote.browser.credentials")
     String remoteBrowserUrl();
 
 }
