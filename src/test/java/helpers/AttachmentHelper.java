@@ -38,8 +38,7 @@ public class AttachmentHelper {
     }
 
     public static String getVideoUrl() {
-//    return "https://" + System.getProperty("remote.browser.url") + "/video/" + getSessionId() + ".mp4";
-        return "https://selenoid.autotests.cloud" + "/video/" + getSessionId() + ".mp4";
+    return "https://" + System.getProperty("remote.browser.url") + "/video/" + getSessionId() + ".mp4";
     }
 
     public static String getSessionId(){

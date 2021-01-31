@@ -15,7 +15,7 @@ repositories {
 
 ext {
     allureVersion = "2.13.7"
-    selenideVersion = "5.16.2"
+    selenideVersion = "5.18.0"
     junitVersion = "5.7.0"
 }
 

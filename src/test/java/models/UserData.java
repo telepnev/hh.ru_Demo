@@ -1,4 +1,4 @@
-package model;
+package models;
 
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
@@ -18,6 +18,8 @@ public class UserData {
     String userBirthMonth = "31";
     String userBirthYear = "1960";
     String userCitizenship = "Индия";
+    String userPhone = fakeValuesService.regexify("909"+"[0-9]{7}");
+
 
     public String getUserBirthMonth() {
         return userBirthMonth;
@@ -38,9 +40,6 @@ public class UserData {
     public String getUserPhone() {
         return userPhone;
     }
-
-    String userPhone = fakeValuesService.regexify("[0-9]{8}");
-
     public String getFirstName() {
         return firstName;
     }
