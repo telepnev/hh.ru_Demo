@@ -1,10 +1,16 @@
 ## Для автотестов был использован сайт `hh.ru`
-Используемые технологии:
+
+### **_Используемые технологии:_**
 
 ![Report](src/main/resources/hh_2.png)
 
-Общая статистика.
+`Общая статистика.`
 
-Скриншоты + Видио 
+`Скриншоты + Видио `
 
 ![Report](src/main/resources/hh_1.png)
+
+`Telegram notifications`
+
+![Report](src/main/resources/hh_3.png)
+
