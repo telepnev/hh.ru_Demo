@@ -18,15 +18,15 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
-        WebdriverConfig config = ConfigFactory.newInstance().create(WebdriverConfig.class, System.getProperties());
+//        WebdriverConfig config = ConfigFactory.newInstance().create(WebdriverConfig.class, System.getProperties());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         if (System.getProperty("remote.browser.url") != null)
-//            Configuration.remote = "https://user1:1234@" + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
-            Configuration.remote = config.remoteBrowserUrl() + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
+            Configuration.remote = "https://user1:1234@" + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
+//            Configuration.remote = config.remoteBrowserUrl() + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
         Configuration.startMaximized = true;
     }
 
