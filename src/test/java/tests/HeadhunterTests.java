@@ -108,25 +108,17 @@ public class HeadhunterTests extends TestBase {
     @DisplayName("Отправка ссылки другому Юзеру")
     @Description("Пользователь должен иметь возможность передать скопированную ссылку")
     public void switchToNewWindowsTest() {
-//        step("Открываем главную страницу", () ->
-//        {
-//            open("https://hh.ru/vacancy/38506572?query=Qa%20automation%20engineer");
-//        });
-//        step("", () ->
-//        {
-//            switchTo().window(0);
-//            open("https://hh.ru/vacancy/38506572?query=Qa%20automation%20engineer");
-//        });
-//        step("", () ->
-//                $("h1").shouldHave(text("QA Automation Engineer")));
-
         step("Открываем главную страницу", () ->
         {
             open("https://hh.ru/vacancy/38506572?query=Qa%20automation%20engineer");
-
-
         });
-
+        step("Передаем ссылку и открываем ее в новом окне", () ->
+        {
+            switchTo().window(0);
+            open("https://hh.ru/vacancy/38506572?query=Qa%20automation%20engineer");
+        });
+        step("Проверяет что переданная страница открылась в другом окне", () ->
+                $("h1").shouldHave(text("QA Automation Engineer")));
     }
 
     @Test
