@@ -187,7 +187,7 @@ public class HeadhunterTests extends TestBase {
         });
         step("Проверка что после отправки Email нас с редеректило на страницу 'Ввод кода'", () ->
                 $("body").shouldHave(text("Введите код")));
-        step("", () -> {
+        step("Вводим неверное значение в поле OTP", () -> {
             $("[data-qa='otp-code-input']").val("111111");
             $("[data-qa='otp-code-submit']").click();
             $("body").shouldHave(text("Неверный код"));
