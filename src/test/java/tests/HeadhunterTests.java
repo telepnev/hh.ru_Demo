@@ -5,6 +5,7 @@ import config.WebdriverConfig;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import models.UserData;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Disabled;
@@ -18,7 +19,8 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 @Owner("telepnev")
-@Feature(" пользователь")
+@Feature("Smoke Test")
+@Story("Пользователь ищет работу")
 public class HeadhunterTests extends TestBase {
     WebdriverConfig config = ConfigFactory.newInstance().create(WebdriverConfig.class, System.getProperties());
     UserData userData = new UserData();
